@@ -4,7 +4,7 @@ from datasets import load_dataset
 
 def save_hf_dataset_to_json(dataset_name, file_name):
     # Load the dataset from Hugging Face
-    dataset = load_dataset(dataset_name)
+    dataset = load_dataset(dataset_name, "generation")
 
     # Convert the dataset to a dictionary
     dataset_dict = {split: dataset[split].to_dict() for split in dataset}
